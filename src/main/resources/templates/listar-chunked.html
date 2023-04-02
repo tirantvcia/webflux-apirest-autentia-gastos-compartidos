@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titol}">Insert title here</title>
+</head>
+<body>
+	<h1 th:text="${titol}"></h1>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>data</th>
+				<th>descripció</th>
+				<th>import</th>
+				<th>persona</th>
+				<th>grup</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="gasto: ${gastos}">
+				<td th:text="${gasto.id}"></td>
+				<td th:text="${gasto.createAt}"></td>
+				<td th:text="${gasto.descripcion}"></td>
+				<td th:text="${gasto.importe}"></td>
+				<td th:text="${gasto.persona.nombre}"></td>
+				<td th:text="${gasto.persona.grupGastos}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
